@@ -16,7 +16,6 @@
         </el-row>
         <!-- 角色列表区域 -->
         <el-table :data="rolesList" border stripe>
-          <el-table-column label="" type="expand"></el-table-column>
           <el-table-column label="#" type="index"></el-table-column>
           <el-table-column label="角色名称" prop="roleName"></el-table-column>
           <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
@@ -93,7 +92,6 @@ export default {
       // 递归获取三级节点的Id
       this.getLeafKeys(right, this.defaultKeys)
       this.setRightDialogVisible = true
-      //  console.log(JSON.stringify(...this.$refs.treeRef.getCheckedKeys()))
     },
     // 监听分配权限对话框的关闭事件
     setRightDialogClosed() {
@@ -123,7 +121,6 @@ export default {
       this.$message.success('分配权限成功！')
       this.getRolesList()
       this.setRightDialogVisible = false
-      console.log(JSON.stringify(keys))
     }
   }
 }
